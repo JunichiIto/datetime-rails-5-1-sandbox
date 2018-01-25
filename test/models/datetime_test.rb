@@ -41,8 +41,10 @@ class DatetimeTest < ActiveSupport::TestCase
 
     assert_equal '2015/01/01 00:00:00, JST, Time', l(Date.today.to_time)
     assert_equal '2015/01/01 00:00:00, EST, ActiveSupport::TimeWithZone', l(Date.today.in_time_zone)
+    assert_equal '2015/01/01 00:00:00, +00:00, DateTime', l(Date.today.to_datetime)
 
     assert_equal '2014/12/31 00:00:00, JST, Time', l(Date.current.to_time)
     assert_equal '2014/12/31 00:00:00, EST, ActiveSupport::TimeWithZone', l(Date.current.in_time_zone)
+    assert_equal '2014/12/31 00:00:00, +00:00, DateTime', l(Date.current.to_datetime)
   end
 end
